@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   delete 'logout' => 'sessions#destroy'
 
   root 'sessions#new'
+
+  resources :posts
 end
