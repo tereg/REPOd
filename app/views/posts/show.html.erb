@@ -2,3 +2,11 @@
 
 <h3>Resource Description: </h3>
 <%= @post.description %>
+
+<ul>
+  <% @post.tags.each do |tag| %>  
+  <li><%= tag.name %></li>
+  <% end %>
+</ul>
+
+<%= render 'tags/new_tag_form' %>

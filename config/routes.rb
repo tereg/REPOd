@@ -11,5 +11,10 @@ Rails.application.routes.draw do
 
   root 'sessions#new'
 
-  resources :posts
+  resources :posts do
+    resources :tags, only: [:create, :destroy]
+  end
+
+  resources :tags, only: [:index]
+
 end

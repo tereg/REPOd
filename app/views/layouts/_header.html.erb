@@ -1,0 +1,7 @@
+<div class= "nav">
+ <% if current_user %>
+  <%= current_user.username %> | <%= link_to "Logout", logout_path  %> | <%= link_to "Resources", posts_path %> | <%= link_to "Home", root_path %>
+ <% else %>
+  <%= link_to "Register", signup_path %> | <%= link_to "Login", root_path  %>
+ <% end %>
+</div>

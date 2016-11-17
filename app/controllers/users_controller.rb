@@ -1,23 +1,23 @@
 class UsersController < ApplicationController
   def new
     @user = User.new
-  end 
+  end
 
   def create
     @user = User.new(user_params)
     if @user.save
       session[:id] = @user.id
       redirect_to posts_path
-    else 
+    else
       redirect_to signup_path
-    end 
-  end 
+    end
+  end
 
   private
 
   def user_params
-    params.require(:user).permit(:email, :password)
-  end 
-  
-end 
+    params.require(:user).permit(:email, :password, :username, :role)
+  end
+
+end
 
