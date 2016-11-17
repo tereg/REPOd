@@ -16,7 +16,7 @@ User.create!(username: "maxiboy", email: "maxwell.mathews@devbootcamp.com", admi
 
 
 
-Post.create!(title: "Reduce!", description: "short blog entry detailing the use of reduce",media_type: "text", teacher_id: 1)
+user.posts.create!(title: "Reduce!", description: "short blog entry detailing the use of reduce",media_type: "text", )
 
 # Tag.create!(name: "javascript", user_id: 1, post_id: 1) # tag_id: 2
 
