@@ -5,3 +5,20 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+User.delete_all
+Tag.delete_all
+Post.delete_all
+
+User.create!(username: "maxiboy", email: "maxwell.mathews@devbootcamp.com", admin_access: true) # user_id: 1
+# User.create!(username: "the_hunter", email: "hunter@devbootcamp.com", admin_access: true) # user_id: 2
+# User.create!(username: "team_account", email: "clientproject@devbootcamp.com", admin_access: true) # user_id: 3
+
+
+
+user.posts.create!(title: "Reduce!", description: "short blog entry detailing the use of reduce",media_type: "text", )
+
+# Tag.create!(name: "javascript", user_id: 1, post_id: 1) # tag_id: 2
+
+
+
