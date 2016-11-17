@@ -1,23 +1,27 @@
 <div class="container">
-<div class="jumbotron">
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Category</th>
-  </tr>
+  <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+    <div class="list-group">
+      <h5>Sort By</h5>
+      <a href="#" class="list-group-item active">Link</a>
+      <a href="#" class="list-group-item">Link</a>
+      <a href="#" class="list-group-item">Link</a>
+    </div>
+  </div>
 
-  <% @posts.each do |post| %>
-    <tr>
-      <td><%= post.title %></td>
-      <td><%= post.description%></td>
-      <td><%= link_to 'Show', post_path(post) %></td>
-      <% post.tags.each do |tag| %>
-       <td><%= tag.name %></td>
-       <% end %>
-
-    </tr>
+  <div class="row row-offcanvas row-offcanvas-right">
+  <h1> List of Resources </h1>
+    <div class="card">
+     <% @tags.each do |tag| %>
+      <% tag.posts.each do |post| %>
+        <tr>
+          <td><%= post.title %></td>
+          <td><%= link_to 'Show', post_path(post) %></td>
+        </tr>
+      <% end %>
+    </div>
   <% end %>
-</table>
+  </div>
 </div>
-</div>
+
+
+
