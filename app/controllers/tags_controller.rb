@@ -1,17 +1,22 @@
 class TagsController < ApplicationController
+  
   def index
+ 
   end
-
-  def show
-  end
-
+  
+  def new
+ 
+  end 
+  
   def create
+ 
+  end 
+ 
+  def show
+ 
   end
 
   def edit
-  end
-
-  def create
   end
 
   def update
@@ -19,4 +24,5 @@ class TagsController < ApplicationController
 
   def destroy
   end
+
 end
