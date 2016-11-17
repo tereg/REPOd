@@ -1,4 +1,6 @@
-
+ body {
+  background-color: #e6e6e6;
+ }
 
 .nav {
   float:right;
@@ -40,12 +42,18 @@
   height: 300px;
 }
 
-.logo-landing{
-  margin-top:5%;
-  margin-left:5%;
+.logo-landing img {
+  width:100%;
+  margin: auto;
+
 }
 .container{
-  position:absolute;
+  clear:both;
   width:100%;
   left:0;
+}
+.jumbotron {
+  margin: 10% auto;
+  width :70%;
+  background-color: white;
 }
