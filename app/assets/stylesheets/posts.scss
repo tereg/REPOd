@@ -6,18 +6,28 @@
 #wrapper {
   width: 75%;
   clear: both;
-  border: 1px solid red;
   margin-right: 2rem;
   margin-top: 0;
+  padding: 2px;
 }
 
 .card {
   float: left;
-  width: 20%;
+  width: 31%;
   padding: .75rem;
-  margin-bottom: 2rem;
+  margin: 0 1%;
   border: 0;
   background-color: #19abb5;
   display: inline-block;
 }
+
+.card h2 {
+  margin-top: 0;
+  color:  #fdfdfd;
+}
+
+#all-resources{
+  margin-left: 25%;
+}
+
 

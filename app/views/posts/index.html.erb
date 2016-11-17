@@ -8,19 +8,19 @@
     </div>
   </div>
 
-<div>
+<div id="all-resources">
   <h1>All Resources</h1>
   <ul>
     <% @posts.each do |post| %>
-      <li><%= link_to "#{post.title}", post_path(post) %></li>
+      <h4><li><%= link_to "#{post.title}", post_path(post) %></li></h4>
     <% end %>
   </ul>
 </div>
 
-  <div id="wrapper" class="row row-offcanvas row-offcanvas-right pull-right">
-  <h1> List of Resources </h1>
+<div id="wrapper" class="row row-offcanvas row-offcanvas-right pull-right">
+  <h1> Resources by Tag </h1>
     <% @tags.each do |tag| %>
-     <div class="card">
+     <div class="card thumbnail">
       <h2><%= tag.name %></h2>  
       <ul>       
       <% tag.posts.each do |post| %>
@@ -30,8 +30,9 @@
       <% end %>
       </ul>
      </div>
-  </div>
     <% end %>
+  </div>
+
 </div>
 
 
