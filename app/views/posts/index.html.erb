@@ -8,11 +8,8 @@
     </div>
   </div>
 
-
   <div class="row row-offcanvas row-offcanvas-right">
   <h1> List of Resources </h1>
-
- 
     <div class="card">
      <% @tags.each do |tag| %>
       <% tag.posts.each do |post| %>
@@ -21,10 +18,10 @@
           <td><%= link_to 'Show', post_path(post) %></td>
         </tr>
       <% end %>
-
     </div>
   <% end %>
   </div>
 </div>
+
 
 

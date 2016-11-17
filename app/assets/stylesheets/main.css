@@ -1,0 +1,59 @@
+ body {
+  background-color: #e6e6e6;
+ }
+
+.nav {
+  float:right;
+  margin-right:5%;
+}
+.nav a{
+  color:red;
+}
+
+.right-container{
+  margin-top: 15%;
+  display: inline-block;
+  vertical-align: top;
+  width:30%;
+  border: solid white 8px;
+  background-color:rgba(29, 30, 25, .8);
+  height: 300px;
+}
+
+.login-form{
+  width:80%;
+  margin-top:20%;
+  margin-left: auto;
+  margin-right:auto;
+  text-align: center;
+}
+.login-form h2{
+  color:#4DC8ED;
+}
+
+.left-container {
+  margin-left:20%;
+  margin-top: 15%;
+  vertical-align: top;
+  display:inline-block;
+  width: 30%;
+  border: solid white 8px;
+  background-color:rgba(29, 30, 25, .8);
+  height: 300px;
+}
+
+.logo-landing img {
+  width:100%;
+  margin: auto;
+
+}
+.container{
+  clear:both;
+  width:100%;
+  left:0;
+}
+.jumbotron {
+  margin: 10% auto;
+  width :70%;
+  background-color: white;
+}
