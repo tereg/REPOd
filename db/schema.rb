@@ -25,7 +25,8 @@ ActiveRecord::Schema.define(version: 20161116220810) do
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.string   "description"
-    t.string   "media_type"
+    t.integer  "media_type"
+    t.string   "url"
     t.integer  "user_id"
     t.boolean  "verified",    default: false
     t.datetime "created_at",                  null: false

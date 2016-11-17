@@ -3,7 +3,8 @@ class CreatePosts < ActiveRecord::Migration[5.0]
     create_table :posts do |t|
       t.string   :title
       t.string   :description
-      t.string   :media_type
+      t.integer  :media_type
+      t.string   :url
       t.integer  :user_id
       t.boolean  :verified, default: false
 
