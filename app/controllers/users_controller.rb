@@ -1,5 +1,15 @@
 class UsersController < ApplicationController
+  
   def index
+  
+  end
+  
+  def new 
+  
+  end   
+  
+  def create
+
   end
 
   def show
@@ -7,16 +17,13 @@ class UsersController < ApplicationController
     @posts = @user.posts
   end
 
-  def create
-  end
-
+  
   def edit
-  end
 
-  def create
   end
 
   def update
+
   end
 
   def destroy
