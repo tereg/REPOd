@@ -2,6 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+#wrapper {
+  width: 75%;
+  clear: both;
+  border: 1px solid red;
+  margin-right: 2rem;
+  margin-top: 0;
+}
+
 .card {
   float: left;
   width: 20%;
@@ -11,3 +20,4 @@
   background-color: #19abb5;
   display: inline-block;
 }
+
