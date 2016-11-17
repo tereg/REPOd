@@ -1,0 +1,14 @@
+<div class="new-post-form">
+<%= form_for(@post) do |f| %>
+  <%= f.text_field :title, :placeholder => "Title" %>
+  <%= f.text_area :description, :placeholder => "Description" %>
+  <%= f.select(:media_type) do%>
+  <%  ["text","video","audio"].each do |c| %>
+  <%= content_tag(:option, c, value: c) %>
+  <% end %>
+  <%= url_field(:post, :url, :placeholder => "URL")%>
+<% end %>
+<%= f.submit %>
+<% end %>
+
+</div>

@@ -1,3 +1,7 @@
+User.delete_all
+Tag.delete_all
+Post.delete_all
+
 teacher = User.create!(username: "maxiboy", email: "maxwell.mathews@devbootcamp.com", role: "teacher") # user_id: 1
 student = User.create!(username: "justin", email: "jdizonXXX@gmail.com", role: "student")
 
@@ -17,14 +21,14 @@ student = User.create!(username: "justin", email: "jdizonXXX@gmail.com", role: "
   teacher.posts.create(title: "Code smells", decription: "An outline on how to avoid code smells" , media_type: 'text', url: 'https://github.com/sf-coyotes-2016/phase-1-guide/blob/sf-master/resources/code_smells.md', verified: true)
   teacher.posts.create(title: "Readable Code", decription: "A written guide on basic practices for writing clean, readable code." , media_type: 'text', url: 'https://github.com/sf-coyotes-2016/phase-1-guide/blob/sf-master/resources/readable_code.md', verified: true)
 
+# user = User.create!(username: "maxiboy", email: "maxwell.mathews@devbootcamp.com", role: "teacher", password: 'password') # user_id: 1
+# User.create!(username: "the_hunter", email: "hunter@devbootcamp.com", admin_access: true) # user_id: 2
+# User.create!(username: "team_account", email: "clientproject@devbootcamp.com", admin_access: true) # user_id: 3
 
  ## Video
   teacher.posts.create(title: "Sam Blackman's Intro to RSpec", description: "A video demonstrating RSpec.", media_type: 'video', url: 'https://talks.devbootcamp.com/intro-to-rspec', verified: true )
   teacher.posts.create(title: 'Jim Weirch - Roman Numerals Kata', decription: "Live code demonstration of Roman Numerals Challenge" , media_type: 'video', url: 'https://www.youtube.com/watch?v=983zk0eqYLY', verified: true)
   teacher.posts.create(title: 'How much time do we truly spend coding? ', decription: "Live code demonstration a professional developer workflow" , media_type: 'video', url: 'https://talks.devbootcamp.com/how-much-time-do-we-truly-spend-coding', verified: true)
-
-
-
 
 
 
@@ -49,10 +53,6 @@ student = User.create!(username: "justin", email: "jdizonXXX@gmail.com", role: "
 # #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 # #   Character.create(name: 'Luke', movie: movies.first)
 
-# User.delete_all
-# Tag.delete_all
-# Post.delete_all
-
 # user = User.create!(username: "maxiboy", email: "maxwell.mathews@devbootcamp.com", role: "teacher") # user_id: 1
 # # User.create!(username: "the_hunter", email: "hunter@devbootcamp.com", admin_access: true) # user_id: 2
 # # User.create!(username: "team_account", email: "clientproject@devbootcamp.com", admin_access: true) # user_id: 3
@@ -62,6 +62,11 @@ student = User.create!(username: "justin", email: "jdizonXXX@gmail.com", role: "
 # user.posts.create!(title: "Reduce!", description: "short blog entry detailing the use of reduce",media_type: "text", url: "http://nishacodes.tumblr.com/post/80652377352/using-reduce-aka-inject-in-ruby", user_id: 1, verified: true)
 
 # # Tag.create!(name: "javascript", user_id: 1, post_id: 1) # tag_id: 2
+=======
+user.tags.create(name: "Ruby")
+
+# Tag.create!(name: "javascript", user_id: 1, post_id: 1) # tag_id: 2
+>>>>>>> abef27555ae8300ca070cb900d3b6df63d5c7a2a
 
 
 

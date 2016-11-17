@@ -1,10 +1,23 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
+  get 'admin' => 'admin#new'
+  resources :admins
 
-  get 'sessions/destroy'
+  get 'signup' => 'users#new'
+  resources :users
 
-  root 'users#index'
-  resources :users, :posts
+  get 'login' => 'sessions#new'
+  resources :sessions
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  post 'login' => 'sessions#create'
+
+  delete 'logout' => 'sessions#destroy'
+
+  root 'sessions#new'
+
+  resources :posts do
+    resources :tags, only: [:create, :destroy]
+  end
+
+  resources :tags, only: [:index, :show]
+
 end
