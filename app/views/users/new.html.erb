@@ -1,7 +1,9 @@
-<h1>Register - students </h1>
+<h1 class="pull-right">Register - students </h1>
 
 <%= form_for(@user) do |f| %>
-  <%= f.text_field :username, :placeholder => "Username" %>
+  <div class="form-group has-error">
+    <%= f.text_field :username, :placeholder => "Username" %>
+  </div>
   <%= f.email_field :email, :placeholder => "Email" %>
   <%= f.password_field :password, :placeholder => "Password" %>
   <%= hidden_field(:user, :role, :value => "student") %>
