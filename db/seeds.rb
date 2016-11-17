@@ -10,13 +10,13 @@ User.delete_all
 Tag.delete_all
 Post.delete_all
 
-User.create!(username: "maxiboy", email: "maxwell.mathews@devbootcamp.com", admin_access: true) # user_id: 1
+user = User.create!(username: "maxiboy", email: "maxwell.mathews@devbootcamp.com", role: "teacher") # user_id: 1
 # User.create!(username: "the_hunter", email: "hunter@devbootcamp.com", admin_access: true) # user_id: 2
 # User.create!(username: "team_account", email: "clientproject@devbootcamp.com", admin_access: true) # user_id: 3
 
 
 
-user.posts.create!(title: "Reduce!", description: "short blog entry detailing the use of reduce",media_type: "text", )
+user.posts.create!(title: "Reduce!", description: "short blog entry detailing the use of reduce",media_type: "text", url: "http://nishacodes.tumblr.com/post/80652377352/using-reduce-aka-inject-in-ruby", user_id: 1, verified: true)
 
 # Tag.create!(name: "javascript", user_id: 1, post_id: 1) # tag_id: 2
 
