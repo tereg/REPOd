@@ -10,17 +10,18 @@
 
   <div class="row row-offcanvas row-offcanvas-right">
   <h1> List of Resources </h1>
-    <div class="card">
      <% @tags.each do |tag| %>
+    <div class="card">
+     <h2><%= tag.name %></h2>
       <% tag.posts.each do |post| %>
         <tr>
-          <td><%= post.title %></td>
+          <td><%= link_to "#{post.title}", post_path(post) %></td>
           <td><%= link_to 'Show', post_path(post) %></td>
         </tr>
       <% end %>
     </div>
-  <% end %>
   </div>
+  <% end %>
 </div>
 
 
