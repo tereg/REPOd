@@ -1,34 +1,23 @@
 class UsersController < ApplicationController
-  
-  def index
-  
-  end
-  
-  def new 
-  
-  end   
-  
+  def new
+    @user = User.new
+  end 
+
   def create
+    @user = User.new(user_params)
+    if @user.save
+      session[:id] = @user.id
+      redirect_to posts_path
+    else 
+      redirect_to signup_path
+    end 
+  end 
 
-  end
+  private
 
-  def show
-    @user = User.find(params[:id])
-    @posts = @user.posts
-  end
-
+  def user_params
+    params.require(:user).permit(:email, :password)
+  end 
   
-  def edit
+end 
 
-  end
-
-  def update
-
-  end
-
-  def destroy
-  end
-
-  def login
-  end
-end
