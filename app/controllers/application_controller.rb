@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   end 
 
   def require_user
-    redirect_to '/login' unless current_user
+    redirect_to login_path unless current_user
   end 
   protect_from_forgery with: :exception
 end
