@@ -62,11 +62,9 @@ student = User.create!(username: "justin", email: "jdizonXXX@gmail.com", role: "
 # user.posts.create!(title: "Reduce!", description: "short blog entry detailing the use of reduce",media_type: "text", url: "http://nishacodes.tumblr.com/post/80652377352/using-reduce-aka-inject-in-ruby", user_id: 1, verified: true)
 
 # # Tag.create!(name: "javascript", user_id: 1, post_id: 1) # tag_id: 2
-=======
 user.tags.create(name: "Ruby")
 
 # Tag.create!(name: "javascript", user_id: 1, post_id: 1) # tag_id: 2
->>>>>>> abef27555ae8300ca070cb900d3b6df63d5c7a2a
 
 
 
