@@ -18,6 +18,6 @@ Rails.application.routes.draw do
     resources :tags, only: [:create, :destroy]
   end
 
-  resources :tags, only: [:index]
+  resources :tags, only: [:index, :show]
 
 end

@@ -3,31 +3,28 @@ class TagsController < ApplicationController
   def index
     @tags = Tag.all
   end
-  
-  # def new
-  #   @post = Post.find(params[:post_id])
-  #   @tag = @post.tags.new(tag_params)
-  # end 
-  
-  def create
-    @post = Post.find(params[:post_id])
-    @tag = current_user.tags.create()
 
-    redirect_to post_path(@post)
-    # if @tag.save
-    #   redirect_to tags_path
-    # else
-    #   @errors = @tag.errors.full_messages
-    #   render 'new'
-    # end
-  end 
- 
   def show
     @tag = Tag.find(params[:id])
   end
+  
+  def create
+    @post = Post.find(params[:post_id])
+    @tag = current_user.tags.create(tag_params)
+    PostTag.create(post_id: @post.id, tag_id: @tag.id)
 
-  def destroy
-  end
+    redirect_to post_path(@post)
+  end 
+ 
+  # def destroy
+  #   @post = Post.find(params[:post_id])
+  #   @tag = Tag.find(params[:id])
+  #   if current_user.role == 'teacher'
+  #     @tag.destroy
+  #   else
+  #     redirect_to post_path(@post)
+  #   end
+  # end
 
 
 
