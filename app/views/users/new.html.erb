@@ -1,0 +1,19 @@
+<h1> Registration Page </h1>
+
+<%= form_for :user do |t| %>
+
+<p>
+<%= t.label :Username %>
+<%= t.text_field :Username %>
+</p>
+
+<p>
+<%= t.label :Password %>
+<%= t.text_field :Password %>
+</p>
+
+<p>
+<%= t.submit %>
+</p>
+
+<% end %>
