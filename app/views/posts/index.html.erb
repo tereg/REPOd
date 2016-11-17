@@ -13,28 +13,28 @@
   </div>
   <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
     <div class="list-group">
-      <h5>Sort By</h5>
-      <a href="#" class="list-group-item active">Link</a>
-      <a href="#" class="list-group-item">Link</a>
-      <a href="#" class="list-group-item">Link</a>
+      <h3>Sort By</h3>
+      <a href="#" >Topic</a><br>
+      <a href="#">Phase</a><br>
+      <a href="#">Most Recent</a>
     </div>
   </div>
 
-<div>
+<div id="all-resources">
   <h1>All Resources</h1>
   <ul>
     <% @posts.each do |post| %>
-      <li><%= link_to "#{post.title}", post_path(post) %></li>
+      <h4><li><%= link_to "#{post.title}", post_path(post) %></li></h4>
     <% end %>
   </ul>
 </div>
 
-  <div id="wrapper" class="row row-offcanvas row-offcanvas-right pull-right">
-  <h1> List of Resources </h1>
+<div id="wrapper" class="row row-offcanvas row-offcanvas-right pull-right">
+  <h1> Resources by Tag </h1>
     <% @tags.each do |tag| %>
-     <div class="card">
-      <h2><%= tag.name %></h2>
-      <ul>
+     <div class="card thumbnail">
+      <h2><%= tag.name %></h2>  
+      <ul>       
       <% tag.posts.each do |post| %>
         <tr>
           <li><td><%= link_to "#{post.title}", post_path(post) %></td></li>
@@ -42,8 +42,9 @@
       <% end %>
       </ul>
      </div>
-  </div>
     <% end %>
+  </div>
+
 </div>
 
 
