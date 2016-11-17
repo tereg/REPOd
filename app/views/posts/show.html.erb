@@ -1,12 +1,16 @@
+<div class="container">
+<div class="jumbotron">
 <h1><%= @post.title %></h1>
 
 <h3>Resource Description: </h3>
 <%= @post.description %>
 
 <ul>
-  <% @post.tags.each do |tag| %>  
+  <% @post.tags.each do |tag| %>
   <li><%= link_to "#{tag.name}", tag_path(tag) %></li>
   <% end %>
 </ul>
 
 <%= render 'tags/new_tag_form' %>
+</div>
+</div>

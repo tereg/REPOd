@@ -2,8 +2,8 @@ User.delete_all
 Tag.delete_all
 Post.delete_all
 
-teacher = User.create!(username: "maxiboy", email: "maxwell.mathews@devbootcamp.com", role: "teacher") # user_id: 1
-student = User.create!(username: "justin", email: "jdizonXXX@gmail.com", role: "student")
+teacher = User.create!(username: "maxiboy", email: "maxwell.mathews@devbootcamp.com", role: "teacher", password: 'password') # user_id: 1
+student = User.create!(username: "justin", email: "jdizonXXX@gmail.com", role: "student", password: 'password')
 
 # Phase 1
 
@@ -20,6 +20,12 @@ student = User.create!(username: "justin", email: "jdizonXXX@gmail.com", role: "
   teacher.posts.create(title: "Writing Readable Code", decription: "An outline to writing easy-to-read code." , media_type: 'text', url: 'https://github.com/sf-coyotes-2016/phase-1-guide/blob/sf-master/readings/writing-readable-code/README.md', verified: true)
   teacher.posts.create(title: "Code smells", decription: "An outline on how to avoid code smells" , media_type: 'text', url: 'https://github.com/sf-coyotes-2016/phase-1-guide/blob/sf-master/resources/code_smells.md', verified: true)
   teacher.posts.create(title: "Readable Code", decription: "A written guide on basic practices for writing clean, readable code." , media_type: 'text', url: 'https://github.com/sf-coyotes-2016/phase-1-guide/blob/sf-master/resources/readable_code.md', verified: true)
+  teacher.posts.create(title: "Regular Expressions", decription: "Quick breakdown on Regular Expressions." , media_type: 'text', url: 'https://github.com/sf-coyotes-2016/phase-1-guide/blob/sf-master/resources/regular_expressions.md', verified: true)
+  teacher.posts.create(title: "More information on Fixed vs Growth Mindsets", decription: "A nice write-up on fixed vs growth mindsets" , media_type: 'text', url: 'http://michaelgr.com/2007/04/15/fixed-mindset-vs-growth-mindset-which-one-are-you/', verified: true)
+  teacher.posts.create(title: "Debugging", decription: "Breakdown on debugging techniques and tips" , media_type: 'text', url: 'https://github.com/sf-coyotes-2016/phase-1-guide/blob/sf-master/readings/debugging/README.md', verified: true)
+  teacher.posts.create(title: "Ruby Scope", decription: "Write-up on scope in the Ruby language" , media_type: 'text', url: 'https://github.com/devbootcamp/reference/wiki/Ruby-Scope', verified: true)
+  teacher.posts.create(title: "The King and his rocks", decription: "A fun little story to describe recursion" , media_type: 'text', url: 'http://ruby.bastardsbook.com/chapters/recursion/', verified: true)
+
 
 # user = User.create!(username: "maxiboy", email: "maxwell.mathews@devbootcamp.com", role: "teacher", password: 'password') # user_id: 1
 # User.create!(username: "the_hunter", email: "hunter@devbootcamp.com", admin_access: true) # user_id: 2
@@ -29,6 +35,8 @@ student = User.create!(username: "justin", email: "jdizonXXX@gmail.com", role: "
   teacher.posts.create(title: "Sam Blackman's Intro to RSpec", description: "A video demonstrating RSpec.", media_type: 'video', url: 'https://talks.devbootcamp.com/intro-to-rspec', verified: true )
   teacher.posts.create(title: 'Jim Weirch - Roman Numerals Kata', decription: "Live code demonstration of Roman Numerals Challenge" , media_type: 'video', url: 'https://www.youtube.com/watch?v=983zk0eqYLY', verified: true)
   teacher.posts.create(title: 'How much time do we truly spend coding? ', decription: "Live code demonstration a professional developer workflow" , media_type: 'video', url: 'https://talks.devbootcamp.com/how-much-time-do-we-truly-spend-coding', verified: true)
+  teacher.posts.create(title: "Phillip Goldin on Distorted Views of the Self", decription: "A video explaining the distorted views we have of ourselves." , media_type: 'video', url: 'http://www.youtube.com/watch?v=bKtBxxR0JRM#t=1243', verified: true)
+  teacher.posts.create(title: "A New Way to Respond to 'Failure' - Tales of overcoming the Superego", decription: "A motivational video." , media_type: 'video', url: 'https://www.youtube.com/watch?v=_tjYoKCBYag', verified: true)
 
 
 
