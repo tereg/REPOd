@@ -2,6 +2,10 @@
   background-color: #e6e6e6;
  }
 
+#register-link {
+  font-size: 16px;
+}
+
 .nav {
   float:right;
   margin-right:5%;
