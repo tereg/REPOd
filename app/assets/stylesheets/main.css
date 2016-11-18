@@ -19,11 +19,17 @@
   margin-right: 10%;
 }
 
+.container-wrapper{
+  margin: 0 auto;
+  text-align: center;
+}
+
 .right-container{
+  margin-right: auto;
   margin-top: 15%;
   display: inline-block;
   vertical-align: top;
-  width:30%;
+  width:375px;
   border: solid white 8px;
   background-color:rgba(29, 30, 25, .8);
   height: 300px;
@@ -41,11 +47,11 @@
 }
 
 .left-container {
-  margin-left:20%;
+  margin-left: auto;
   margin-top: 15%;
   vertical-align: top;
   display:inline-block;
-  width: 30%;
+  width: 375px;
   border: solid white 8px;
   background-color:rgba(29, 30, 25, .8);
   height: 300px;
@@ -66,6 +72,10 @@
   width :70%;
   background-color: white;
 }
-.search.form {
-  width: 500px;
+
+
+#homepage-logo {
+
+  height: 290px;
+
 }
