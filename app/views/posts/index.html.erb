@@ -28,7 +28,9 @@
     <ul>
       <% @posts.each do |post| %>
         <% if post.verified == true %>
-          <h4><li><%= link_to "#{post.title}", post_path(post) %></li></h4>
+          <h4><li><%= link_to "#{post.title}", post_path(post) %> <% if current_user.role == "teacher" %> | <%= link_to 'Delete', post_path(post),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %> <% end %></li></h4>
         <% end %>
       <% end %>
     </ul>
