@@ -2,10 +2,8 @@
 <div class="jumbotron">
 <h1><%= @tag.name %></h1>
 
-<ul>
   <% @tag.posts.each do |post| %>
-    <li><%= link_to "#{post.title}", post_path(post) %></li>
+    <p><%= link_to "#{post.title}", post_path(post) %></p>
   <% end %>
-</ul>
 </div>
 </div>

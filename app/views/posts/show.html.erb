@@ -2,14 +2,19 @@
 <div class="jumbotron">
 <h1><%= @post.title %></h1>
 
-<h3>Resource Description: </h3>
-<%= @post.description %>
+<h3>Description</h3>
+  <p>
+    <%= @post.description %>
+  </p>
+<h3>Link</h3>
+  <p>
+    <a href="<%= @post.url %>"><%= @post.url %></a>
+  </p>
 
-<ul>
+<h3>Tags</h3>
   <% @post.tags.each do |tag| %>
-  <li><%= link_to "#{tag.name}", tag_path(tag) %></li>
+  <p><%= link_to "#{tag.name}", tag_path(tag) %></p>
   <% end %>
-</ul>
 
 <%= render 'tags/new_tag_form' %>
 </div>
