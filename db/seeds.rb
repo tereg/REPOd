@@ -7,6 +7,7 @@ student = User.create!(username: "justin", email: "jdizonXXX@gmail.com", role: "
 
 ruby_tag = teacher.tags.create(name: 'Ruby')
 rspec_tag = teacher.tags.create(name: 'RSpec')
+rails_tag = teacher.tags.create(name: 'Rails')
 self_development_tag = teacher.tags.create(name: 'Self-Development')
 recursion_tag = teacher.tags.create(name: 'Recursion')
 regex_tag = teacher.tags.create(name: 'RegEx')
@@ -35,8 +36,9 @@ debug_tag = teacher.tags.create(name: 'Debugging')
   post15 = teacher.posts.create(title: "Debugging", description: "Breakdown on debugging techniques and tips" , media_type: 'text', url: 'https://github.com/sf-coyotes-2016/phase-1-guide/blob/sf-master/readings/debugging/README.md', verified: true)
   post16 = teacher.posts.create(title: "Ruby Scope", description: "Write-up on scope in the Ruby language" , media_type: 'text', url: 'https://github.com/devbootcamp/reference/wiki/Ruby-Scope', verified: true)
   post17 = teacher.posts.create(title: "The King and his rocks", description: "A fun little story to describe recursion" , media_type: 'text', url: 'http://ruby.bastardsbook.com/chapters/recursion/', verified: true)
-
-
+  post23 = teacher.posts.create(title: "Cool Stuff You'll Love In Rails", description: "Stuff for controllers, routes, and views", media_type: 'text', url: 'https://github.com/sf-coyotes-2016/phase-3-guide/blob/sf-chi/resources/cool-stuff-in-rails.md', verified: true)
+  post24 = teacher.posts.create(title: "Rails Coming From Sinatra", description: "Brief overview of Rails and comparison to Sinatra", media_type: 'text', url: 'https://github.com/sf-coyotes-2016/phase-3-guide/blob/sf-chi/phase-3-prep/rails-sinatra.md', verified: false)
+  post25 = teacher.posts.create(title: "Rails Resources", description: "Page with links to different resources", media_type: 'text', url: 'https://github.com/sf-coyotes-2016/phase-3-guide/blob/sf-chi/resources/rails-resources.md', verified: false)
 # user = User.create!(username: "maxiboy", email: "maxwell.mathews@devbootcamp.com", role: "teacher", password: 'password') # user_id: 1
 # User.create!(username: "the_hunter", email: "hunter@devbootcamp.com", admin_access: true) # user_id: 2
 # User.create!(username: "team_account", email: "clientproject@devbootcamp.com", admin_access: true) # user_id: 3
@@ -70,6 +72,9 @@ PostTag.create(post_id: post19.id, tag_id: ruby_tag.id)
 PostTag.create(post_id: post20.id, tag_id: better_code_tag.id)
 PostTag.create(post_id: post21.id, tag_id: self_development_tag.id)
 PostTag.create(post_id: post22.id, tag_id: self_development_tag.id)
+PostTag.create(post_id: post23.id, tag_id: rails_tag.id)
+PostTag.create(post_id: post24.id, tag_id: rails_tag.id)
+
 
 
 
