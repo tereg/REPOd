@@ -9,6 +9,11 @@
 .nav a{
   color:red;
 }
+.nav #spotify{
+  /*position:relative;*/
+  float:left;
+  margin-right: 10%;
+}
 
 .right-container{
   margin-top: 15%;

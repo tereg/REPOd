@@ -1,6 +1,9 @@
+<% if current_user %>
+<iframe id="spotify" src="https://embed.spotify.com/?uri=spotify:track:5JunxkcjfCYcY7xJ29tLai" frameborder="0" allowtransparency="true"></iframe>
+<% end %>
 <div class= "nav">
  <% if current_user %>
-  <%=image_tag("repod_logo.png", size: "50x50",)  %><%= current_user.username %> | <%= link_to "Logout", logout_path,:method => :delete  %> | <%= link_to "Resources", posts_path %> | <%= link_to "Home", root_path %>
+ <%=image_tag("repod_logo.png", size: "20x20",)  %><%= current_user.username %> | <%= link_to "Logout", logout_path,:method => :delete  %> | <%= link_to "Resources", posts_path %> | <%= link_to "Home", root_path %>
  <% else %>
   <%= link_to "Register", signup_path %> | <%= link_to "Login", root_path  %>
  <% end %>
