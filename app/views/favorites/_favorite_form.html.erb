@@ -1,0 +1,11 @@
+<%= form_for([@post, current_user.favorites.build]) do |f| %> 
+
+<!--   <p>
+    <%= f.label :favorite %>
+    <%= f.text_field :name, placeholder: "#newtaghere" %>
+  </p> -->
+  <p>
+    <%= link_to 'Favorite', post_favorites(@post) %>
+  </p>
+
+<% end %>
