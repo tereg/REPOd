@@ -15,17 +15,16 @@ class PostsController < ApplicationController
   end
 
   def new
-    @user = User.find(current_user.id)
-    @post = @user.posts.new
+    @post = Post.new
   end
 
   def create
     @user = User.find(current_user.id)
     @post = @user.posts.new(post_params)
+      @user.role == 'teacher' ? @post.verified = true : @post.verified = false
+
     if @post.save && request.xhr?
-        p "*" *1000
-        p @post
-           render json:@post
+      render json:@post
     else
 
      render "new"
