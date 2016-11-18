@@ -35,7 +35,7 @@
      <div class="card thumbnail">
       <h2><%= tag.name %></h2>  
       <ul>       
-      <% tag.posts.each do |post| %>
+      <% tag.posts.last(5).reverse.each do |post| %>
         <tr>
           <li><td><%= link_to "#{post.title}", post_path(post) %></td></li>
         </tr>
