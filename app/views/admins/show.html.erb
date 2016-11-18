@@ -1,0 +1,5 @@
+<% if current_user.role == "teacher" %>
+<h1>Teacher Admin Page</h1>
+<% else %>
+<h1>You do not have access to this page</h1>
+<% end %>
