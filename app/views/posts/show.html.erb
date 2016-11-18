@@ -17,5 +17,20 @@
   <% end %>
 
 <%= render 'tags/new_tag_form' %>
+  <p>
+    <%= link_to 'Favorite', post_favorites_path(@post), method: "create" %>
+  </p>
+  
+  <div>
+  <div>
+    <% if @notice %>
+      <%= @notice %>
+    <% end %>
+  </div>
+    <%= @post.favorites.count %>
+    <% @post.favorites.each do |favorite| %>
+      <%= favorite.user.username %>
+    <% end %>
+  </div>
 </div>
 </div>
