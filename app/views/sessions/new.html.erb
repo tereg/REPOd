@@ -10,9 +10,9 @@
   <div class ="login-form">
     <h2>Login</h2>
     <%= form_for(:session, url: login_path) do |f| %>
-     <p> <%= f.email_field :email, :placeholder => "Email" %></p>
-      <p><%= f.password_field :password, :placeholder => "Password" %></p>
-      <p><%= f.submit "Login", class: "btn-submit" %></p>
+     <p> <%= f.email_field :email, :placeholder => "Email", :class => "form-control" %></p>
+      <p><%= f.password_field :password, :placeholder => "Password", :class => "form-control" %></p>
+      <p><%= f.submit "Login", :class => "btn btn-default" %></p>
     <% end %>
   </div>
 </div>

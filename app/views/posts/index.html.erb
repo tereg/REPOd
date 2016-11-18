@@ -11,13 +11,15 @@
     <% end %>
   </div>
   <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+
     <div class="list-group">
       <h3>Sort By</h3>
       <a href="#" >Topic</a><br>
       <a href="#">Phase</a><br>
       <a href="#">Most Recent</a>
     </div>
-    <h3><%= link_to "Add New Resource", new_post_url %></h3>
+    <h3><%= link_to "Add New Resource", new_post_url, remote: true %></h3>
+      <div id="task-form" style="display:none;"></div>
   </div>
 
   <div id="all-resources">
@@ -35,7 +37,7 @@
     <h1> Resources by Tag </h1>
       <% @tags.each do |tag| %>
        <div class="card thumbnail">
-        <h2><%= link_to "#{tag.name}", tag_path(tag) %></h2>     
+        <h2><%= link_to "#{tag.name}", tag_path(tag) %></h2>
           <% tag.posts.reverse.select{ |post| post.verified == true}.take(5).each do |post| %>
             <tr>
               <li><td><%= link_to "#{post.title}", post_path(post) %></td></li>
