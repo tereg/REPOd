@@ -2,10 +2,6 @@
   background-color: #e6e6e6;
  }
 
-#register-link {
-  font-size: 16px;
-}
-
 .nav {
   float:right;
   margin-right:5%;
@@ -14,79 +10,12 @@
   color:red;
 }
 .nav #spotify{
-  /*position:relative;*/
   float:left;
   margin-right: 10%;
 }
 
-.container-wrapper{
-  margin: 0 auto;
-  text-align: center;
-}
-
-.right-container{
-  margin-right: auto;
-  margin-top: 15%;
-  display: inline-block;
-  vertical-align: top;
-  width:375px;
-  border: solid white 8px;
-  background-color:rgba(29, 30, 25, .8);
-  height: 300px;
-}
-
-.login-form{
-  width:80%;
-  margin-top:20%;
-  margin-left: auto;
-  margin-right:auto;
-  text-align: center;
-}
-.login-form h2{
-  color:#4DC8ED;
-}
-
-.left-container {
-  margin-left: auto;
-  margin-top: 15%;
-  vertical-align: top;
-  display:inline-block;
-  width: 375px;
-  border: solid white 8px;
-  background-color:rgba(29, 30, 25, .8);
-  height: 300px;
-}
-
-.logo-landing img {
-  width:100%;
-  margin: auto;
-
-}
-.container{
-  clear:both;
-  width:100%;
-  left:0;
-}
 .jumbotron {
   margin: 10% auto;
   width :70%;
   background-color: white;
 }
-
-
-#homepage-logo {
-
-  height: 290px;
-
-}
-
-#favorite-button {
-  background-color: #19abb5;
-  font-size: 20px;
-}
-
-.glyphicon-star {
-  color: #ffe600;
-}
-
-
