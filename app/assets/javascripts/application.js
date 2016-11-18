@@ -36,4 +36,11 @@ $(document).on("turbolinks:load", function(){
          $('#task-form').css("display","none");
      })
    })
+
+   $("#spotify-toggle").on("click", function(){
+
+      $("#spotify").slideDown(350);
+      $("#spotify-toggle").hide()
+   });
+
 });
