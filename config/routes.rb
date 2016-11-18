@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'admin' => 'admin#new'
+
   resources :admins
 
   get 'signup' => 'users#new'

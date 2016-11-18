@@ -1,6 +1,8 @@
 <div class= "nav">
- <% if current_user %>
+ <% if !current_user.try(:role) == "teacher" %>
   <%=image_tag("repod_logo.png", size: "50x50",)  %><%= current_user.username %> | <%= link_to "Logout", logout_path,:method => :delete  %> | <%= link_to "Resources", posts_path %> | <%= link_to "Home", root_path %>
+ <% elsif current_user.try(:role) == "teacher" %>
+  <%=image_tag("repod_logo.png", size: "50x50",)  %><%= link_to current_user.username, admin_path(current_user) %> | <%= link_to "Logout", logout_path,:method => :delete  %> | <%= link_to "Resources", posts_path %> | <%= link_to "Home", root_path %>
  <% else %>
   <%=  link_to "Register", signup_path, :id => "register-link" %>
  <% end %>
