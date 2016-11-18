@@ -34,13 +34,13 @@
     <% @tags.each do |tag| %>
      <div class="card thumbnail">
       <h2><%= link_to "#{tag.name}", tag_path(tag) %></h2>  
-      <ul>       
+           
       <% tag.posts.last(5).reverse.each do |post| %>
         <tr>
           <li><td><%= link_to "#{post.title}", post_path(post) %></td></li>
         </tr>
       <% end %>
-      </ul>
+    
      </div>
     <% end %>
   </div>
