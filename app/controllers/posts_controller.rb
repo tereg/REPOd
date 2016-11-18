@@ -45,7 +45,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     @post.update(post_params)
-    redirect_to _path
+    redirect_to admin_path(current_user)
   end
 
   def destroy
