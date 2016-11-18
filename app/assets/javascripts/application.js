@@ -32,8 +32,7 @@ $(document).on("turbolinks:load", function(){
         var description = response.description
         var url = response.url
         var media_type = response.media_type
-
-         $("#all-resources").find("ul").prepend("<li><a href="+url+">"+title+"</a></li>")
+         $("#all-resources").find("ul").prepend("<h4><li><a href="+url+">"+title+"</a></li></h4>")
          $('#task-form').css("display","none");
      })
    })

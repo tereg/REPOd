@@ -22,10 +22,10 @@ class PostsController < ApplicationController
   def create
     @user = User.find(current_user.id)
     @post = @user.posts.new(post_params)
-    if @post.save
-        if request.xhr?
+    if @post.save && request.xhr?
+        p "*" *1000
+        p @post
            render json:@post
-        end
     else
 
      render "new"
