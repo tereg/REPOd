@@ -33,7 +33,7 @@
   <h1> Resources by Tag </h1>
     <% @tags.each do |tag| %>
      <div class="card thumbnail">
-      <h2><%= tag.name %></h2>  
+      <h2><%= link_to "#{tag.name}", tag_path(tag) %></h2>  
       <ul>       
       <% tag.posts.last(5).reverse.each do |post| %>
         <tr>
