@@ -1,13 +1,20 @@
-<%= simple_form_for @post do |f| %>
-  <%= f.text_field :title, :placeholder => "Title" %>
-  <%= f.text_area :description, :placeholder => "Description" %>
-  <%= f.select(:media_type) do%>
-  <%  ["text","video","audio"].each do |c| %>
-  <%= content_tag(:option, c, value: c) %>
-  <% end %>
-  <%= url_field(:post, :url, :placeholder => "URL")%>
-<% end %>
-<%= f.submit %>
-<% end %>
+<div class="container">
+  <div class = "row">
+    <div class="col-lg-8 col-lg-offset-2">
+    <h1>Suggest a New Resource</h1>
+      <%= form_for @post do |f| %>
+        <%= f.text_field :title, :placeholder => "Title", :class => "form-control" %><br>
+        <%= f.text_area :description, :placeholder => "Description", :class => "form-control", :rows => "10" %><br>
+        <%= f.select(:media_type, :class => "form-control drop-down") do%>
+          <%  ["text","video","audio"].each do |c| %>
+            <%= content_tag(:option, c, value: c) %>
+        <% end %>
+        <%= url_field(:post, :url, :placeholder => "URL", :class => "form-control")%>
+      <% end %><br>
+      <%= f.submit "Add Post", :class => "btn btn-default" %>
+      <% end %>
+    </div>
+  </div>
+</div>
 
 
