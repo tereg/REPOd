@@ -1,13 +1,13 @@
 <% if current_user.role == "teacher" %>
 <h1>Teacher Admin Page</h1>
 <h2>Pending Posts</h2>
-<ul>
-<% @posts.each do |post| %>
-<% if post.verified == false %>
-  <li><%= post.title %> | <%= link_to "Verify Resource", post_path(post, :post =>{:verified => true}), :method => :put, :confirm => "Are you sure?" %></li>
-<% end %>
-<% end %>
-</ul>
+  <ul>
+  <% @posts.each do |post| %>
+    <% if post.verified == false %>
+    <li><%= post.title %> | <%= link_to "Verify Resource", post_path(post, :post =>{:verified => true}), :method => :put, :confirm => "Are you sure?" %></li>
+    <% end %>
+  <% end %>
+  </ul>
 <p>No Pending Posts at the moment!<p>
 <% else %>
 <h1>You do not have access to this page</h1>

@@ -19,6 +19,6 @@
 * Show the number of favorites per resource
 * Allow users to create favorite lists to organize their favorites
 * Scraping:
-..* Create an image (scrape) for each resource and have the main display of resources in a pinterest style layout
-..* Allow the saving of videos from youtube or vimeo with the videos imbedded in the app
-..* Scrape the main content of the page when adding a resource and have a resource page
+- Create an image (scrape) for each resource and have the main display of resources in a pinterest style layout
+- Allow the saving of videos from youtube or vimeo with the videos imbedded in the app
+- Scrape the main content of the page when adding a resource and have a resource page

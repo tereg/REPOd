@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :admins
+  get '/npc9uAnEeD' => 'admins#new'
+  get 'admins/new' => 'sessions#new'
+  resources :admins, except: :new
 
   get 'signup' => 'users#new'
   resources :users
