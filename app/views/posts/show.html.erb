@@ -18,7 +18,7 @@
 
 <%= render 'tags/new_tag_form' %>
   <p>
-    <%= link_to 'Favorite', post_favorites_path(@post), method: "create" %>
+    <%= link_to 'Favorite', post_favorites_path(@post), method: "create", :class => "btn btn-info btn-lg glyphicon glyphicon-star", :id => "favorite-button" %>
   </p>
   
   <div>

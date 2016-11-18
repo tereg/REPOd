@@ -2,10 +2,10 @@
 
   <p>
     <%= f.label :tag %>
-    <%= f.text_field :name, placeholder: "#newtaghere" %>
+    <%= f.text_field :name, placeholder: "#newtaghere", :class => "form-control", :id => "tag-form" %>
   </p>
   <p>
-    <%= f.submit %>
+    <%= f.submit "Submit", :class => "btn btn-default" %>
   </p>
 
 <% end %>
