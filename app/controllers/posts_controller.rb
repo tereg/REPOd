@@ -1,6 +1,9 @@
 class PostsController < ApplicationController
 
   def index
+    if !current_user
+      redirect_to root_path
+    end
     @posts = Post.all
     @tags = Tag.all
     if params[:search]
@@ -15,10 +18,16 @@ class PostsController < ApplicationController
   end
 
   def new
+    if !current_user
+      redirect_to root_path
+    end
     @post = Post.new
   end
 
   def create
+    if !current_user
+      redirect_to root_path
+    end
     @user = User.find(current_user.id)
     @post = @user.posts.new(post_params)
       @user.role == 'teacher' ? @post.verified = true : @post.verified = false
@@ -32,6 +41,9 @@ class PostsController < ApplicationController
   end
 
   def show
+    if !current_user
+      redirect_to root_path
+    end
     @post = Post.find(params[:id])
   end
 
@@ -42,6 +54,9 @@ class PostsController < ApplicationController
 
 
   def update
+    if !current_user
+      redirect_to root_path
+    end
     @post = Post.find(params[:id])
     @post.update(post_params)
     redirect_to admin_path(current_user)
