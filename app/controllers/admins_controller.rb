@@ -8,7 +8,7 @@ class AdminsController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to admin_path(@user)
+      redirect_to posts_path
     else
       redirect_to signup_path
     end
