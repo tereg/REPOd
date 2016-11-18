@@ -14,3 +14,27 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).on("turbolinks:load", function(){
+   $("#task-form").on("submit", "#new_post", function(event){
+     event.preventDefault();
+     var form = $(this);
+     var url = form.attr("action");
+     var method = form.attr("method");
+     var data = form.serialize();
+     $.ajax({
+       url : url,
+       method: method,
+       data: data,
+       dataType: 'json'
+     }).done(function(response){
+        var title = response.title
+        var description = response.description
+        var url = response.url
+        var media_type = response.media_type
+
+         $("#all-resources").find("ul").prepend("<li><a href="+url+">"+title+"</a></li>")
+         $('#task-form').css("display","none");
+     })
+   })
+});

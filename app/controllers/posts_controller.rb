@@ -8,6 +8,10 @@ class PostsController < ApplicationController
     else
       @posts = Post.all.order("created_at DESC")
     end
+    respond_to do |format|
+    format.html
+    format.json
+    end
   end
 
   def new
@@ -19,8 +23,11 @@ class PostsController < ApplicationController
     @user = User.find(current_user.id)
     @post = @user.posts.new(post_params)
     if @post.save
-      redirect_to root_path
+        if request.xhr?
+           render json:@post
+        end
     else
+
      render "new"
     end
   end
