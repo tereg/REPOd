@@ -1,58 +1,55 @@
 <% if current_user %>
-<div class="container">
-  
-  <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
-
-    <div class="list-group">
-      <h3>Sort By</h3>
-      <a href="#" >Topic</a><br>
-      <a href="#">Phase</a><br>
-      <a href="#">Most Recent</a>
-    </div>
-    <h3><%= link_to "Add New Resource", new_post_url, remote: true %></h3>
+  <div class="container">
+    <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+      <div class="list-group">
+        <h3>Sort By</h3>
+        <a href="#" >Topic</a><br>
+        <a href="#">Phase</a><br>
+        <a href="#">Most Recent</a>
+      </div>
+      <h3><%= link_to "Add New Resource", new_post_url, remote: true %></h3>
       <div id="task-form" style="display:none;"></div>
-  </div>
+    </div>
 
-  <div id="all-resources">
-  <div class="search bar">
-    <%= form_tag(posts_path, :method => "get", id: "search-form") do%>
-   
-    <%= text_field_tag :search, params[:search], placeholder: "Search Posts", :class => "form-control", :id => "search-form-blank" %><%= submit_tag "Search", :class => "btn btn-default", :id => "search-btn" %>
-    <% end %>
+    <div id="all-resources">
+      <div class="search bar">
+        <%= form_tag(posts_path, :method => "get", id: "search-form") do%>
+          <%= text_field_tag :search, params[:search], placeholder: "Search Posts", :class => "form-control", :id => "search-form-blank" %><%= submit_tag "Search", :class => "btn btn-default", :id => "search-btn" %>
+        <% end %>
 
- 
-    <% if @posts.present? %>
-      <%= render @posts %>
-    <% else %>
-      <p> There are not posts containing the key words <%= params[:search] %>.</p>
-    <% end %>
-  </div>
-    <h1>All Resources</h1>
-    <ul>
-      <% @posts.each do |post| %>
-        <% if post.verified == true %>
-          <h4><li><%= link_to "#{post.title}", post_path(post) %> <% if current_user.role == "teacher" %> | <%= link_to 'Delete', post_path(post),
+        <% if @posts.present? %>
+          <%= render @posts %>
+        <% else %>
+          <p> There are not posts containing the key words <%= params[:search] %>.</p>
+        <% end %>
+      </div>
+
+      <h1>All Resources</h1>
+      <ul>
+        <% @posts.each do |post| %>
+          <% if post.verified == true %>
+            <h4><li><%= link_to "#{post.title}", post_path(post) %> <% if current_user.role == "teacher" %> | <%= link_to 'Delete', post_path(post),
               method: :delete,
               data: { confirm: 'Are you sure?' } %> <% end %></li></h4>
+          <% end %>
         <% end %>
-      <% end %>
-    </ul>
-  </div>
+      </ul>
+    </div>
 
-  <div id="wrapper" class="row row-offcanvas row-offcanvas-right pull-right">
-    <h1> Resources by Tag </h1>
+    <div id="wrapper" class="row row-offcanvas row-offcanvas-right pull-right">
+      <h1> Resources by Tag </h1>
       <% @tags.each do |tag| %>
-       <div class="card thumbnail">
-        <h2><%= link_to "#{tag.name}", tag_path(tag) %></h2>
+        <div class="card thumbnail">
+          <h2><%= link_to "#{tag.name}", tag_path(tag) %></h2>
           <% tag.posts.reverse.select{ |post| post.verified == true}.take(5).each do |post| %>
             <tr>
-              <li><td><%= link_to "#{post.title}", post_path(post) %></td></li>
+             <li><td><%= link_to "#{post.title}", post_path(post) %></td></li>
             </tr>
           <% end %>
         </div>
       <% end %>
+    </div>
   </div>
-</div>
 <% else %>
-<h1>Please login to continue!</h1>
+  <h1>Please login to continue!</h1>
 <% end %>

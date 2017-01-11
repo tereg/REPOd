@@ -1,36 +1,36 @@
 <div class="container">
-<div class="jumbotron">
-<h1><%= @post.title %></h1>
+  <div class="jumbotron">
+    <h1><%= @post.title %></h1>
 
-<h3>Description</h3>
-  <p>
-    <%= @post.description %>
-  </p>
-<h3>Link</h3>
-  <p>
-    <a href="<%= @post.url %>"><%= @post.url %></a>
-  </p>
+    <h3>Description</h3>
+    <p>
+      <%= @post.description %>
+    </p>
+    <h3>Link</h3>
+    <p>
+      <a href="<%= @post.url %>"><%= @post.url %></a>
+    </p>
 
-<h3>Tags</h3>
-  <% @post.tags.each do |tag| %>
-  <p><%= link_to "#{tag.name}", tag_path(tag) %></p>
-  <% end %>
-
-<%= render 'tags/new_tag_form' %>
-  <p>
-    <%= link_to 'Favorite', post_favorites_path(@post), method: "create", :class => "btn btn-info btn-lg glyphicon glyphicon-star", :id => "favorite-button" %>
-  </p>
-  
-  <div>
-  <div>
-    <% if @notice %>
-      <%= @notice %>
+    <h3>Tags</h3>
+    <% @post.tags.each do |tag| %>
+      <p><%= link_to "#{tag.name}", tag_path(tag) %></p>
     <% end %>
+
+    <%= render 'tags/new_tag_form' %>
+    <p>
+      <%= link_to 'Favorite', post_favorites_path(@post), method: "create", :class => "btn btn-info btn-lg glyphicon glyphicon-star", :id => "favorite-button" %>
+    </p>
+
+    <div>
+      <div>
+        <% if @notice %>
+          <%= @notice %>
+        <% end %>
+      </div>
+      <%= @post.favorites.count %>
+      <% @post.favorites.each do |favorite| %>
+        <%= favorite.user.username %>
+      <% end %>
+    </div>
   </div>
-    <%= @post.favorites.count %>
-    <% @post.favorites.each do |favorite| %>
-      <%= favorite.user.username %>
-    <% end %>
-  </div>
-</div>
 </div>
