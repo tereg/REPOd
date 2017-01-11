@@ -1,5 +1,4 @@
 class TagsController < ApplicationController
-  
   def index
     @tags = Tag.all
   end
@@ -33,8 +32,6 @@ class TagsController < ApplicationController
   #     redirect_to post_path(@post)
   #   end
   # end
-
-
 
   private
 
