@@ -10,5 +10,4 @@ class FavoritesController < ApplicationController
       render 'posts/show'
     end
   end
-
 end

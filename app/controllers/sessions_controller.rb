@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   def new
     if current_user
-       redirect_to posts_path
+      redirect_to posts_path
     end
   end
 

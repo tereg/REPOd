@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-
   def index
     if !current_user
       redirect_to root_path
@@ -12,8 +11,8 @@ class PostsController < ApplicationController
       @posts = Post.all.order("created_at DESC")
     end
     respond_to do |format|
-    format.html
-    format.json
+      format.html
+      format.json
     end
   end
 
@@ -35,8 +34,7 @@ class PostsController < ApplicationController
     if @post.save && request.xhr?
       render json:@post
     else
-
-     render "new"
+      render "new"
     end
   end
 
@@ -47,11 +45,9 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-
   def edit
 
   end
-
 
   def update
     if !current_user
@@ -72,5 +68,4 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :description, :media_type, :url, :user_id, :verified)
   end
-
 end
