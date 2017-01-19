@@ -9,10 +9,6 @@
 .nav a{
   color:red;
 }
-.nav #spotify{
-  float:left;
-  margin-right: 10%;
-}
 
 .jumbotron {
   margin: 10% auto;

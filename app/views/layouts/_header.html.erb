@@ -1,22 +1,9 @@
 <div class= "nav">
   <% if current_user.try(:role) == "teacher" %>
-    <%=image_tag("repod_logo.png", size: "50x50",)  %> | <%= link_to current_user.username, admin_path(current_user) %> | <%= link_to "Logout", logout_path,:method => :delete  %> | <%= link_to "Resources", posts_path %> | <%= link_to "Home", posts_path %> | <%= link_to "Profile", user_path(current_user) %>
+    <%=link_to image_tag("repod_logo.png", size: "50x50"), posts_path %> | <%= link_to "My Favorites", user_path(current_user) %> | <%= link_to "Admin Page", admin_path(current_user) %> | <%= link_to "Logout", logout_path,:method => :delete  %> 
   <% elsif current_user.try(:role) == "student" %>
-    <%=image_tag("repod_logo.png", size: "50x50",)  %> | <%= current_user.username %> | <%= link_to "Logout", logout_path,:method => :delete  %> | <%= link_to "Resources", posts_path %> | <%= link_to "Home", posts_path %> | <%= link_to "Profile", user_path(current_user) %>
+    <%=link_to image_tag("repod_logo.png", size: "50x50"), posts_path %> | <%= link_to "My Favorites", user_path(current_user) %> | <%= link_to "Logout", logout_path,:method => :delete  %> 
   <% else %>
     <%=  link_to "Register", signup_path, :id => "register-link" %>
   <% end %>
 </div>
-
-<% if current_user %>
-  <div id="spotify" style="display:none; ">
-    <iframe src="https://embed.spotify.com/?uri=spotify:track:5JunxkcjfCYcY7xJ29tLai" frameborder="0" allowtransparency="true"></iframe>
-  </div>
-
-  <div class="music">
-    <button type="button" class="btn btn-default btn-md" id="spotify-toggle">
-      <span class="glyphicon glyphicon-music"></span>Music
-    </button>
-  </div>
-<% end %>
-
