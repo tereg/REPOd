@@ -29,15 +29,15 @@ Repo/d is a Ruby on Rails application which allows students to search, browse, a
 REPO/d is still a work in progress. Here are a few images of our app:
 
 ### Landing Page
-![landing page](app/assets/images/landing_page.png =500x)
+![landing page](app/assets/images/landing_page.png)
 
 ### What you see when you first log in
-![list of all posts](app/assets/images/posts.png =500x)
+![list of all posts](app/assets/images/posts.png)
 
 ### Posts by tag
-![posts organized by tag](app/assets/images/posts_by_tag.png =500x)
+![posts organized by tag](app/assets/images/posts_by_tag.png)
 
 ### List of Favorites
-![list of favorited posts](app/assets/images/my_favorites.png =500x)
+![list of favorited posts](app/assets/images/my_favorites.png)
 
 
