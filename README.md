@@ -1,31 +1,43 @@
-# REPOd
+# REPO/d
 
-REPOd is a centralized, searchable database of resources with tags that can be linked to so that students can search and browse for relevant resources. It would allow students to sign in, search and browse resources, and teachers would be able to save resources as well.
+Repo/d is a Ruby on Rails application which allows students to search, browse, and link to tech resources that enhance their learning experience.  Teachers post recommended resources for  students which relate to course content, and students are able to suggest resources which must be approved by a teacher before they appear in the student view.
 
 ## Team Members:
-* Frank Sommers
 * Justin Dizon
 * Tere Gallarreta
-* Robbie Santos
 * Tony Nguyen 
+* Robbie Santos
+* Frank Sommers
 
-## MVP:
+## Current Features:
 
-* Has User Authentication
+* User Authentication
 * Users can have one of two roles (Student / Teacher)
-* Each user type has a specific authorization, mainly teachers getting access to a certain tag
-* Two levels of authorization (student / teacher)
-* Teachers have ability to add resources
-* Teachers have a certain section or tag of the site that only they can see (teacher specific resources)
-* Resources can be tagged and/or categorized by certain keywords (e.g. Javascript, Ruby)
-* Users can search for keywords with relevant tags and get relevant results
-* Allow users to "star" or favorite resources, which will display on their profile
+* All registered users can: 
+  - browse resources
+  - search for resources using keywords
+  - favorite resources and have them display in a "My Favorites" view
+  - add tags (such as JavaScript, Ruby, etc.) to resources
+  - see how many times a resource has been favorited
+* Students can: 
+  - suggest resources
+* Teachers can: 
+  - add resources
+  - approve resources suggested by students
 
-## MVP++:
+## Screenshots
+REPO/d is still a work in progress. Here are a few images of our app:
 
-* Show the number of favorites per resource
-* Allow users to create favorite lists to organize their favorites
-* Scraping:
-- Create an image (scrape) for each resource and have the main display of resources in a pinterest style layout
-- Allow the saving of videos from youtube or vimeo with the videos imbedded in the app
-- Scrape the main content of the page when adding a resource and have a resource page
+### Landing Page
+![landing page](app/assets/images/landing_page.png =500x)
+
+### What you see when you first log in
+![list of all posts](app/assets/images/posts.png =500x)
+
+### Posts by tag
+![posts organized by tag](app/assets/images/posts_by_tag.png =500x)
+
+### List of Favorites
+![list of favorited posts](app/assets/images/my_favorites.png =500x)
+
+
