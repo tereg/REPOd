@@ -3,9 +3,9 @@
     <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
       <div class="list-group">
         <h3>Sort By</h3>
-        <a href="#" >Topic</a><br>
-        <a href="#">Phase</a><br>
-        <a href="#">Most Recent</a>
+        <%= link_to('Topic', :order => 'topic') %><br>
+        <%= link_to('Phase', :order => 'phase') %><br>
+        <%= link_to('Most Recent', :order => 'date') %>
       </div>
       <h3><%= link_to "Add New Resource", new_post_url, remote: true %></h3>
       <div id="task-form" style="display:none;"></div>

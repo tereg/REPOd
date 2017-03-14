@@ -8,4 +8,12 @@ class Post < ApplicationRecord
   def self.search(search)
     where("title||description ILIKE ?", "%#{search}%")
   end
+
+  def topic
+    if tags.first 
+      tags.first.name
+    else
+      ""
+    end 
+  end 
 end
