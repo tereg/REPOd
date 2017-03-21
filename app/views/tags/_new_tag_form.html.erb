@@ -1,0 +1,9 @@
+<%= form_for([@post, current_user.tags.build]) do |f| %> 
+  <p>
+    <%= f.label :tag %>
+    <%= f.text_field :name, placeholder: "#newtaghere", :class => "form-control", :id => "tag-form" %>
+  </p>
+  <p>
+    <%= f.submit "Submit", :class => "btn btn-default" %>
+  </p>
+<% end %>

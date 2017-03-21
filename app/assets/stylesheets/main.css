@@ -1,0 +1,21 @@
+ body {
+  background-color: #e6e6e6;
+ }
+
+.nav {
+  float:right;
+  margin-right:5%;
+}
+.nav a{
+  color:red;
+}
+
+.jumbotron {
+  margin: 10% auto;
+  width :70%;
+  background-color: white;
+}
+
+.left-align {
+  margin-left: 10%;
+}

@@ -1,0 +1,9 @@
+<div class= "nav">
+  <% if current_user.try(:role) == "teacher" %>
+    <%=link_to image_tag("repod_logo.png", size: "50x50"), posts_path %> | <%= link_to "My Favorites", user_path(current_user) %> | <%= link_to "Admin Page", admin_path(current_user) %> | <%= link_to "Logout", logout_path,:method => :delete  %> 
+  <% elsif current_user.try(:role) == "student" %>
+    <%=link_to image_tag("repod_logo.png", size: "50x50"), posts_path %> | <%= link_to "My Favorites", user_path(current_user) %> | <%= link_to "Logout", logout_path,:method => :delete  %> 
+  <% else %>
+    <%=  link_to "Register", signup_path, :id => "register-link" %>
+  <% end %>
+</div>

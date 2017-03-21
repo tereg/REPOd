@@ -1,0 +1,12 @@
+<div class="container left-align">
+  <h1>Welcome, <%= @user.username %>!</h1>
+
+  <h2>Favorited Posts:</h2>
+  <ul>
+    <% @user.favorited_posts.each do |favorite| %>
+      <h4>
+        <li><%= link_to "#{favorite.title}", post_path(favorite) %></li>
+      </h4>
+    <% end %>
+  </ul>
+</div>

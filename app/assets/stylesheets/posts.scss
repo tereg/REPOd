@@ -1,0 +1,79 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#wrapper {
+  width: 75%;
+  clear: both;
+  margin-right: 2rem;
+  margin-top: 0;
+  padding: 2px;
+}
+
+.card {
+  float: left;
+  width: 31%;
+  height: 340px;
+  padding: 1.50rem;
+  margin: 1% 1%;
+  border: 0;
+  background-color: #19abb5;
+  display: inline-block;
+}
+
+.card h2 {
+  margin-top: 0;
+  color:  #fdfdfd;
+  text-shadow: 2px 2px gray;
+}
+
+#all-resources{
+  margin-left: 25%;
+}
+
+.card li {
+ list-style: none;
+ padding: 2% 0;
+}
+
+.card li a {
+  font-size: 16px;
+}
+
+#wrapper a:link {
+  color: #f2f2f2;
+}
+
+#wrapper a:visited {
+    color: #f2f2f2;
+}
+
+.drop-down {
+  font-size :16px;
+}
+
+#favorite-button {
+  background-color: #19abb5;
+  font-size: 20px;
+}
+
+.glyphicon-star {
+  color: white;
+  text-shadow: 1px 1px gray;
+}
+
+#search-form-blank {
+  width: 700px;
+  margin-left: 1%;
+  margin-top: 1%;
+}
+
+#search-btn {
+  display: inline-block;
+}
+
+#search-form-blank {
+  display: inline-block;
+}
+
