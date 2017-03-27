@@ -10,8 +10,6 @@ class Post < ApplicationRecord
     where("title||description ILIKE ?", "%#{search}%")
   end
 
-  
-
   def topic
     if tags.first 
       tags.first.name
@@ -20,9 +18,4 @@ class Post < ApplicationRecord
     end 
   end 
 
-  def sort_by_topic(posts)
-    posts.sort_by do |post|
-      post.topic
-    end 
-  end 
 end

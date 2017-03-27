@@ -11,9 +11,7 @@ class PostsController < ApplicationController
     end
 
     if (params[:order] == 'topic')
-      @posts.sort_by do |post|
-        post.topic
-      end 
+      @posts = @posts.sort_by { |post| post.topic }
     end 
 
     if params[:order] == 'phase'

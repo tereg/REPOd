@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  describe ".topic" do 
+  describe "#topic" do 
     let(:user1) { User.new(id: 1, username: "maxiboy", email: "maxwell.mathews@devbootcamp.com", role: "teacher", password: 'password') }
 
     let(:post1) { Post.new(id: 1, title: 'RSpec Basics', description: 'An introductory guide to RSpec syntax and how to incorporate testing within your development', media_type: 'text', url: 'https://github.com/sf-coyotes-2016/phase-1-guide/blob/sf-master/readings/rspec/README.md', user_id: 1, verified: true) }
