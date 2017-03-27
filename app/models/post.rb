@@ -5,15 +5,24 @@ class Post < ApplicationRecord
   has_many :favorited_users, through: :favorites, source: :user
     enum media_type: [:text, :video, :audio]
   belongs_to :user
+
   def self.search(search)
     where("title||description ILIKE ?", "%#{search}%")
   end
+
+  
 
   def topic
     if tags.first 
       tags.first.name
     else
       ""
+    end 
+  end 
+
+  def sort_by_topic(posts)
+    posts.sort_by do |post|
+      post.topic
     end 
   end 
 end

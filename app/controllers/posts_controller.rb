@@ -10,9 +10,8 @@ class PostsController < ApplicationController
       @posts = Post.all.order("created_at DESC")
     end
 
-
     if (params[:order] == 'topic')
-      @posts = @posts.sort_by do |post|
+      @posts.sort_by do |post|
         post.topic
       end 
     end 
