@@ -15,14 +15,22 @@ class PostsController < ApplicationController
     end 
 
     if params[:order] == 'phase'
-      @tags = Tag.all.select { |tag| (tag.name == "Phase 1" || tag.name == "Phase 2" || tag.name == "Phase 3" )}
-      @tags.sort_by! { |tag| tag.name }
+      # @tags = Tag.all.select { |tag| (tag.name == "Phase 1" || tag.name == "Phase 2" || tag.name == "Phase 3" )}
+      # @tags.sort_by! { |tag| tag.name }
+      # @posts = @posts.sort_by { |post| p post.sort_by_phase }
+      phase_tags = @posts.map { |post| post.select_phase_tags }
+      phase_tags = phase_tags.reject &:blank?
+      p phase_tags
+      # @posts = phase_tags.map { |tag| tag.posts }
+      # p @posts
+      p "***&&&" * 80
+      # p phase_tags
+      # p "*" * 80
+      # @posts = @tags.map do |tag|
+      #   tag.posts
+      # end 
 
-      @posts = @tags.map do |tag|
-        tag.posts
-      end 
-
-      @posts = @posts.flatten.uniq
+      # @posts = @posts.flatten.uniq
 
     end 
     respond_to do |format|

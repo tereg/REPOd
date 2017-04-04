@@ -18,4 +18,18 @@ class Post < ApplicationRecord
     end 
   end 
 
+  def select_phase_tags
+
+    tags.map do |tag|
+      if (tag.name == "Phase 1" || tag.name == "Phase 2" || tag.name == "Phase 3" )
+        tag 
+      end
+
+    end 
+   
+
+    # if tags 
+    #   @tags = tags.select { |tag| (tag.name == "Phase 1" || tag.name == "Phase 2" || tag.name == "Phase 3" )}
+    # end
+  end
 end
