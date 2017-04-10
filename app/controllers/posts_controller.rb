@@ -6,7 +6,7 @@ class PostsController < ApplicationController
     @tags = Tag.all
 
     if params
-      @posts = Post.search(params)
+      @posts = Post.sort_by_params(params)
     else
       @posts = Post.all.order("created_at DESC")
     end

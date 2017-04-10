@@ -6,7 +6,7 @@ class Post < ApplicationRecord
     enum media_type: [:text, :video, :audio]
   belongs_to :user
 
-  def self.search(params)
+  def self.sort_by_params(params)
     posts = Post.all
     params = identify_params(params)
     if params == "topic"
