@@ -4,30 +4,13 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     @tags = Tag.all
-    if params[:search]
-      @posts = Post.search(params[:search]).order("created_at DESC")
+
+    if params
+      @posts = Post.sort_by_params(params)
     else
       @posts = Post.all.order("created_at DESC")
     end
 
-
-    if (params[:order] == 'topic')
-      @posts = @posts.sort_by do |post|
-        post.topic
-      end 
-    end 
-
-    if params[:order] == 'phase'
-      @tags = Tag.all.select { |tag| (tag.name == "Phase 1" || tag.name == "Phase 2" || tag.name == "Phase 3" )}
-      @tags.sort_by! { |tag| tag.name }
-
-      @posts = @tags.map do |tag|
-        tag.posts
-      end 
-
-      @posts = @posts.flatten.uniq
-
-    end 
     respond_to do |format|
       format.html
       format.json
