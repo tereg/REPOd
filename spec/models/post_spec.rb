@@ -46,6 +46,28 @@ RSpec.describe Post, type: :model do
     expect(post1.verified).to eq(true)
   end
 
+  describe ".identify_params" do 
+    it "returns a string of the search term when params equals search" do 
+      params = {"utf8"=>"✓", "search"=>"git", "commit"=>"Search"}
+      expect(Post.identify_params(params)).to eq("git")
+    end 
+
+    it "returns the string 'topic' when params equals topic" do 
+      params = {"order"=>"topic"}
+      expect(Post.identify_params(params)).to eq("topic")
+    end 
+
+    it "returns the string 'phase' when params equals phase" do 
+      params = {"order"=>"phase"}
+      expect(Post.identify_params(params)).to eq("phase")
+    end 
+
+    it "returns the string 'date' when params equals date" do 
+      params = {"order"=>"date"}
+      expect(Post.identify_params(params)).to eq("date")
+    end 
+  end 
+
   describe ".search" do 
     context "when posts are searched by keywords" do 
       params = {"utf8"=>"✓", "search"=>"git", "commit"=>"Search"}
@@ -81,10 +103,6 @@ RSpec.describe Post, type: :model do
     end 
   end 
 
-  # describe ".identify_params" do 
-  #   it "returns"
-  # end 
-
   describe "#topic" do 
     it "returns the name of the first tag of a post if a post has tags" do 
       post2.topic
@@ -119,18 +137,3 @@ RSpec.describe Post, type: :model do
     end 
   end 
 end
-
-
-
-    # it "excludes posts that do not have phase tags" do 
-    #   @posts = [post1, post2, post5, post6]
-    #   expect(@posts.map { |post| post.sort_by_phase }).not_to include(post6)
-    # end 
-
-    # it "orders posts by phase" do
-    #   @posts = [post1, post2, post5, post6]
-    #   @tags = [rspec_tag, regex_tag, git_tag, phase1_tag, phase2_tag, phase3_tag]
-    
-    #   @posts
-    #   expect(@posts.each { |post| post.sort_by_phase }).to eq([post5, post1, post2])
-    # end 
