@@ -103,10 +103,18 @@ RSpec.describe Post, type: :model do
     end 
   end 
 
+  describe ".search_term" do 
+    it "returns posts that contain the search term in the title or description" do 
+      expect(Post.search_term("agreements")).to eq([post6])
+    end 
+
+    it "does not return posts that do not contain the search term in the title or description" do 
+      expect(Post.search_term("agreements")).not_to include(post5)
+    end 
+  end 
+
   describe "#topic" do 
     it "returns the name of the first tag of a post if a post has tags" do 
-      post2.topic
-      post5.topic 
       expect(post1.topic).to eq("Rspec")
     end 
 
@@ -122,7 +130,6 @@ RSpec.describe Post, type: :model do
 
   describe "#has_a_phase?" do 
     it "returns true if a post has a phase tag" do 
-      post5.tags 
       expect(post5.has_a_phase?).to eq(true)
     end 
 
