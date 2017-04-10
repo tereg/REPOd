@@ -48,32 +48,42 @@ RSpec.describe Post, type: :model do
 
   describe ".search" do 
     context "when posts are searched by keywords" do 
+      params = {"utf8"=>"✓", "search"=>"git", "commit"=>"Search"}
       it "returns posts matching the search terms" do 
-        expect(Post.search("git")).to include(post5)
+        expect(Post.search(params)).to include(post5)
       end 
     end
 
     context "when posts are searched by topic" do 
+      params = {"order"=>"topic"}
       it "returns posts sorted by topic" do 
-        # expect(Post.search("topic")).to include(post5)
+        expect(Post.search(params)).to eq([post6, post5, post2, post1])
       end 
     end 
 
     context "when posts are searched by phase" do 
-      xit "returns posts sorted by phase" do 
-        # expect(Post.search("topic")).to include(post5)
+      params = {"order"=>"phase"}
+      it "returns posts sorted by phase" do 
+        expect(Post.search(params)).to eq([post5, post1, post2])
       end 
 
-      xit "does not include posts that do not have a phase tag" do
+      it "does not include posts that do not have a phase tag" do
+        params = {"order"=>"phase"}
+        expect(Post.search(params)).not_to include(post6)
       end 
     end 
 
     context "when posts are searched by most recent" do 
-      xit "returns posts sorted by date created" do 
-        # expect(Post.search("topic")).to include(post5)
+      params = {"order"=>"date"}
+      it "returns posts sorted by date created" do 
+        expect(Post.search(params)).to eq([post6, post5, post2, post1])
       end 
     end 
   end 
+
+  # describe ".identify_params" do 
+  #   it "returns"
+  # end 
 
   describe "#topic" do 
     it "returns the name of the first tag of a post if a post has tags" do 

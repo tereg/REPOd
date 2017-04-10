@@ -23,6 +23,7 @@ class Post < ApplicationRecord
   end
 
   def self.identify_params(params)
+    p params 
     if params.has_key?("search")
       params = params["search"]
     elsif params.has_value?("topic")
