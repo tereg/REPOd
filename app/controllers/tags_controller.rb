@@ -18,7 +18,8 @@ class TagsController < ApplicationController
     else
       @post = Post.find(params[:post_id])
       @tag = current_user.tags.create(tag_params)
-
+      @post.tags << @tag 
+      
       redirect_to post_path(@post)
     end
   end 
