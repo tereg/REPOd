@@ -10,7 +10,7 @@ class Post < ApplicationRecord
     posts = Post.all
     params = identify_params(params)
     if params == "topic"
-      posts = posts.sort_by { |post| p post.topic }
+      posts = posts.sort_by { |post| post.topic }
     elsif params == "phase"
       posts = posts.select { |post| post.has_a_phase? == true }
       posts = posts.sort_by! { |post| post.phase_tag }
