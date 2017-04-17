@@ -74,6 +74,10 @@ RSpec.describe Post, type: :model do
       it "returns posts matching the search terms" do 
         expect(Post.sort_by_params(params)).to include(post5)
       end 
+
+      it "excludes posts not matching search terms" do 
+        expect(Post.sort_by_params(params)).not_to include(post2)
+      end 
     end
 
     context "when posts are searched by topic" do 
